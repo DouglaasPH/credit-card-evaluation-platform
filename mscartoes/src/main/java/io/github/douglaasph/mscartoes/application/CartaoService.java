@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class CartaoService {
-    private CartaoRepository repository;
+    private final CartaoRepository repository;
 
     @Transactional
     public Cartao save(Cartao cartao) {

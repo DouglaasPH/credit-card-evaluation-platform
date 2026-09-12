@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class ClienteCartaoService {
-    private ClienteCartaoRepository repository;
+    private final ClienteCartaoRepository repository;
 
     public List<ClienteCartao> listCartoesByCpf(String cpf) {
         return repository.findByCpf(cpf);
