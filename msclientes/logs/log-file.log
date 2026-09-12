@@ -1,0 +1,54 @@
+2026-09-12T18:20:01.345-03:00  INFO 16108 --- [msclientes] [restartedMain] i.g.d.msclientes.MsclientesApplication   : Starting MsclientesApplication using Java 26.0.1 with PID 16108 (C:\Users\dougl\OneDrive\Área de Trabalho\spring-cloud-microsservices-ecossystem\msclientes\target\classes started by dougl in C:\Users\dougl\OneDrive\Área de Trabalho\spring-cloud-microsservices-ecossystem\msclientes)
+2026-09-12T18:20:01.347-03:00  INFO 16108 --- [msclientes] [restartedMain] i.g.d.msclientes.MsclientesApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-09-12T18:20:01.377-03:00  INFO 16108 --- [msclientes] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-12T18:20:01.377-03:00  INFO 16108 --- [msclientes] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-12T18:20:01.637-03:00  WARN 16108 --- [msclientes] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to process import candidates for configuration class [io.github.douglaasph.msclientes.MsclientesApplication]: Error processing condition on org.springframework.boot.actuate.autoconfigure.audit.AuditEventsEndpointAutoConfiguration
+2026-09-12T18:20:01.646-03:00  INFO 16108 --- [msclientes] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-09-12T18:20:01.661-03:00 ERROR 16108 --- [msclientes] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Binding to target [Bindable@187e1a92 type = java.util.List<java.lang.String>, value = 'none', annotations = array<Annotation>[[empty]], bindMethod = [null]] failed:
+
+    Property: management.endpoints.web.exposure.include['*']
+    Value: ""
+    Origin: class path resource [application.properties] - 9:0
+    Reason: The elements [management.endpoints.web.exposure.include['*']] were left unbound.
+
+Action:
+
+Update your application's configuration
+
+2026-09-12T18:20:22.034-03:00  INFO 18428 --- [msclientes] [restartedMain] i.g.d.msclientes.MsclientesApplication   : Starting MsclientesApplication using Java 26.0.1 with PID 18428 (C:\Users\dougl\OneDrive\Área de Trabalho\spring-cloud-microsservices-ecossystem\msclientes\target\classes started by dougl in C:\Users\dougl\OneDrive\Área de Trabalho\spring-cloud-microsservices-ecossystem\msclientes)
+2026-09-12T18:20:22.036-03:00  INFO 18428 --- [msclientes] [restartedMain] i.g.d.msclientes.MsclientesApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-09-12T18:20:22.068-03:00  INFO 18428 --- [msclientes] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-12T18:20:22.069-03:00  INFO 18428 --- [msclientes] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-12T18:20:22.269-03:00  WARN 18428 --- [msclientes] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to process import candidates for configuration class [io.github.douglaasph.msclientes.MsclientesApplication]: Error processing condition on org.springframework.boot.actuate.autoconfigure.audit.AuditEventsEndpointAutoConfiguration
+2026-09-12T18:20:22.274-03:00  INFO 18428 --- [msclientes] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-09-12T18:20:22.288-03:00 ERROR 18428 --- [msclientes] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Binding to target [Bindable@673e252c type = java.util.List<java.lang.String>, value = 'none', annotations = array<Annotation>[[empty]], bindMethod = [null]] failed:
+
+    Property: management.endpoints.web.exposure.include['*']
+    Value: ""
+    Origin: class path resource [application.properties] - 9:0
+    Reason: The elements [management.endpoints.web.exposure.include['*']] were left unbound.
+
+Action:
+
+Update your application's configuration
+

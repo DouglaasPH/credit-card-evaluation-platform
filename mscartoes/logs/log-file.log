@@ -1,0 +1,60 @@
+2026-09-12T18:24:46.428-03:00  INFO 17284 --- [mscartoes] [restartedMain] i.g.d.mscartoes.MscartoesApplication     : Starting MscartoesApplication using Java 26.0.1 with PID 17284 (C:\Users\dougl\OneDrive\Área de Trabalho\spring-cloud-microsservices-ecossystem\mscartoes\target\classes started by dougl in C:\Users\dougl\OneDrive\Área de Trabalho\spring-cloud-microsservices-ecossystem\mscartoes)
+2026-09-12T18:24:46.430-03:00  INFO 17284 --- [mscartoes] [restartedMain] i.g.d.mscartoes.MscartoesApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-09-12T18:24:46.464-03:00  INFO 17284 --- [mscartoes] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-12T18:24:46.464-03:00  INFO 17284 --- [mscartoes] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-12T18:24:47.069-03:00  INFO 17284 --- [mscartoes] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-12T18:24:47.173-03:00  INFO 17284 --- [mscartoes] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 98 ms. Found 2 JPA repository interfaces.
+2026-09-12T18:24:47.349-03:00  INFO 17284 --- [mscartoes] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=bc127eae-c446-354b-927a-fa35a467f6f2
+2026-09-12T18:24:47.700-03:00  INFO 17284 --- [mscartoes] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-09-12T18:24:47.709-03:00  INFO 17284 --- [mscartoes] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-12T18:24:47.709-03:00  INFO 17284 --- [mscartoes] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-12T18:24:47.746-03:00  INFO 17284 --- [mscartoes] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1282 ms
+2026-09-12T18:24:47.960-03:00  INFO 17284 --- [mscartoes] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-12T18:24:48.105-03:00  INFO 17284 --- [mscartoes] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:e4d8c066-605d-4c8c-b881-102aa9fc1c9b user=SA
+2026-09-12T18:24:48.106-03:00  INFO 17284 --- [mscartoes] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-12T18:24:48.130-03:00  INFO 17284 --- [mscartoes] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-09-12T18:24:48.165-03:00  INFO 17284 --- [mscartoes] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-09-12T18:24:48.463-03:00  INFO 17284 --- [mscartoes] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-12T18:24:48.527-03:00  INFO 17284 --- [mscartoes] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:e4d8c066-605d-4c8c-b881-102aa9fc1c9b]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: E4D8C066-605D-4C8C-B881-102AA9FC1C9B/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-12T18:24:49.206-03:00  INFO 17284 --- [mscartoes] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-12T18:24:49.246-03:00  INFO 17284 --- [mscartoes] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-12T18:24:49.304-03:00  INFO 17284 --- [mscartoes] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-12T18:24:49.468-03:00  WARN 17284 --- [mscartoes] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-12T18:24:49.945-03:00  INFO 17284 --- [mscartoes] [restartedMain] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:e4d8c066-605d-4c8c-b881-102aa9fc1c9b'
+2026-09-12T18:24:50.014-03:00  INFO 17284 --- [mscartoes] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestClient.
+2026-09-12T18:24:50.036-03:00  WARN 17284 --- [mscartoes] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-09-12T18:24:50.041-03:00  INFO 17284 --- [mscartoes] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 17 endpoints beneath base path '/actuator'
+2026-09-12T18:24:50.126-03:00  INFO 17284 --- [mscartoes] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 55226 (http) with context path '/'
+2026-09-12T18:24:50.128-03:00  INFO 17284 --- [mscartoes] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 55226
+2026-09-12T18:24:50.131-03:00  INFO 17284 --- [mscartoes] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-09-12T18:24:50.148-03:00  INFO 17284 --- [mscartoes] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-09-12T18:24:50.151-03:00  INFO 17284 --- [mscartoes] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-12T18:24:50.158-03:00  INFO 17284 --- [mscartoes] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-09-12T18:24:50.158-03:00  INFO 17284 --- [mscartoes] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-09-12T18:24:50.158-03:00  INFO 17284 --- [mscartoes] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-09-12T18:24:50.158-03:00  INFO 17284 --- [mscartoes] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-09-12T18:24:50.158-03:00  INFO 17284 --- [mscartoes] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-09-12T18:24:50.158-03:00  INFO 17284 --- [mscartoes] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-09-12T18:24:50.158-03:00  INFO 17284 --- [mscartoes] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-09-12T18:24:50.473-03:00  INFO 17284 --- [mscartoes] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-09-12T18:24:50.474-03:00  INFO 17284 --- [mscartoes] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-09-12T18:24:50.476-03:00  INFO 17284 --- [mscartoes] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-09-12T18:24:50.477-03:00  INFO 17284 --- [mscartoes] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1789248290476 with initial instances count: 4
+2026-09-12T18:24:50.479-03:00  INFO 17284 --- [mscartoes] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MSCARTOES with eureka with status UP
+2026-09-12T18:24:50.480-03:00  INFO 17284 --- [mscartoes] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1789248290480, current=UP, previous=STARTING]
+2026-09-12T18:24:50.481-03:00  INFO 17284 --- [mscartoes] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSCARTOES/mscartoes:eefdc1b44b64952d54f72ebae605b097: registering service...
+2026-09-12T18:24:50.486-03:00  INFO 17284 --- [mscartoes] [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-09-12T18:24:50.551-03:00  INFO 17284 --- [mscartoes] [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#2a960cb5:0/SimpleConnection@1ffa3ba [delegate=amqp://guest@127.0.0.1:5672/, localPort=55234]
+2026-09-12T18:24:50.583-03:00  INFO 17284 --- [mscartoes] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSCARTOES/mscartoes:eefdc1b44b64952d54f72ebae605b097 - registration status: 204
+2026-09-12T18:24:50.588-03:00  INFO 17284 --- [mscartoes] [restartedMain] i.g.d.mscartoes.MscartoesApplication     : Started MscartoesApplication in 4.453 seconds (process running for 5.036)

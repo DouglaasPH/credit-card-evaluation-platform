@@ -1,0 +1,35 @@
+2026-09-12T18:24:11.995-03:00  INFO 20384 --- [msavaliadorcredito] [restartedMain] i.g.d.m.MsavaliadorcreditoApplication    : Starting MsavaliadorcreditoApplication using Java 26.0.1 with PID 20384 (C:\Users\dougl\OneDrive\Área de Trabalho\spring-cloud-microsservices-ecossystem\msavaliadorcredito\target\classes started by dougl in C:\Users\dougl\OneDrive\Área de Trabalho\spring-cloud-microsservices-ecossystem\msavaliadorcredito)
+2026-09-12T18:24:11.997-03:00  INFO 20384 --- [msavaliadorcredito] [restartedMain] i.g.d.m.MsavaliadorcreditoApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-09-12T18:24:12.032-03:00  INFO 20384 --- [msavaliadorcredito] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-12T18:24:12.033-03:00  INFO 20384 --- [msavaliadorcredito] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-12T18:24:12.781-03:00  INFO 20384 --- [msavaliadorcredito] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=2956e453-329b-31d0-b77b-7b07d509a2b7
+2026-09-12T18:24:13.086-03:00  INFO 20384 --- [msavaliadorcredito] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-09-12T18:24:13.096-03:00  INFO 20384 --- [msavaliadorcredito] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-12T18:24:13.096-03:00  INFO 20384 --- [msavaliadorcredito] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-12T18:24:13.143-03:00  INFO 20384 --- [msavaliadorcredito] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1110 ms
+2026-09-12T18:24:13.421-03:00  INFO 20384 --- [msavaliadorcredito] [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'msclientes' URL not provided. Will try picking an instance via load-balancing.
+2026-09-12T18:24:13.453-03:00  INFO 20384 --- [msavaliadorcredito] [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'mscartoes' URL not provided. Will try picking an instance via load-balancing.
+2026-09-12T18:24:14.137-03:00  INFO 20384 --- [msavaliadorcredito] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestClient.
+2026-09-12T18:24:14.152-03:00  WARN 20384 --- [msavaliadorcredito] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-09-12T18:24:14.161-03:00  INFO 20384 --- [msavaliadorcredito] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 17 endpoints beneath base path '/actuator'
+2026-09-12T18:24:14.208-03:00  INFO 20384 --- [msavaliadorcredito] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 55184 (http) with context path '/'
+2026-09-12T18:24:14.208-03:00  INFO 20384 --- [msavaliadorcredito] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 55184
+2026-09-12T18:24:14.211-03:00  INFO 20384 --- [msavaliadorcredito] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-09-12T18:24:14.226-03:00  INFO 20384 --- [msavaliadorcredito] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-09-12T18:24:14.229-03:00  INFO 20384 --- [msavaliadorcredito] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-12T18:24:14.235-03:00  INFO 20384 --- [msavaliadorcredito] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-09-12T18:24:14.235-03:00  INFO 20384 --- [msavaliadorcredito] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-09-12T18:24:14.235-03:00  INFO 20384 --- [msavaliadorcredito] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-09-12T18:24:14.235-03:00  INFO 20384 --- [msavaliadorcredito] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-09-12T18:24:14.235-03:00  INFO 20384 --- [msavaliadorcredito] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-09-12T18:24:14.235-03:00  INFO 20384 --- [msavaliadorcredito] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-09-12T18:24:14.235-03:00  INFO 20384 --- [msavaliadorcredito] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-09-12T18:24:14.502-03:00  INFO 20384 --- [msavaliadorcredito] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-09-12T18:24:14.504-03:00  INFO 20384 --- [msavaliadorcredito] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-09-12T18:24:14.505-03:00  INFO 20384 --- [msavaliadorcredito] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-09-12T18:24:14.506-03:00  INFO 20384 --- [msavaliadorcredito] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1789248254505 with initial instances count: 4
+2026-09-12T18:24:14.508-03:00  INFO 20384 --- [msavaliadorcredito] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application MSAVALIADORCREDITO with eureka with status UP
+2026-09-12T18:24:14.509-03:00  INFO 20384 --- [msavaliadorcredito] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1789248254509, current=UP, previous=STARTING]
+2026-09-12T18:24:14.510-03:00  INFO 20384 --- [msavaliadorcredito] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSAVALIADORCREDITO/msavaliadorcredito:7a903cd72af591e5fc8674d485930274: registering service...
+2026-09-12T18:24:14.522-03:00  INFO 20384 --- [msavaliadorcredito] [restartedMain] i.g.d.m.MsavaliadorcreditoApplication    : Started MsavaliadorcreditoApplication in 2.856 seconds (process running for 3.399)
+2026-09-12T18:24:14.614-03:00  INFO 20384 --- [msavaliadorcredito] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MSAVALIADORCREDITO/msavaliadorcredito:7a903cd72af591e5fc8674d485930274 - registration status: 204
