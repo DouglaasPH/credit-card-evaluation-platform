@@ -1,0 +1,179 @@
+networks:
+  msnet:
+    driver: bridge
+
+volumes:
+  mysql-data:
+  rabbitmq-data:
+
+services:
+
+  # ------------------------------
+  # Camada 1: infraestrutura (sem ordem entre si)
+  # ------------------------------
+  rabbitmq:
+    image: rabbitmq:4-management
+    container_name: rabbitmq
+    hostname: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    volumes:
+      - rabbitmq-data:/var/lib/rabbitmq
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "check_port_connectivity"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    networks:
+      - msnet
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.7.3
+    container_name: keycloak
+    hostname: keycloak
+    command: start-dev --import-realm
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./keycloak/realm-export.json:/opt/keycloak/data/import/realm-export.json
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c 'echo > /dev/tcp/127.0.0.1/8080' || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+      start_period: 90s
+    networks:
+      - msnet
+
+  mysql:
+    image: mysql:8.4
+    container_name: mysql
+    hostname: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "--protocol=tcp", "-uroot", "-proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+      start_period: 60s
+    networks:
+      - msnet
+
+  # ------------------------------
+  # Camada 2: eureka (espera a camada 1 ficar saudável)
+  # ------------------------------
+  eurekaserver:
+    build:
+      context: ./eurekaserver
+    container_name: eurekaserver
+    hostname: eurekaserver
+    restart: on-failure:5
+    ports:
+      - "8761:8761"
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      keycloak:
+        condition: service_healthy
+      mysql:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c 'echo > /dev/tcp/127.0.0.1/8761' || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+    networks:
+      - msnet
+
+  # ------------------------------
+  # Camada 3: microsserviços (esperam o eureka ficar saudável)
+  # ------------------------------
+  msavaliadorcredito:
+    build:
+      context: ./msavaliadorcredito
+    container_name: msavaliadorcredito
+    restart: on-failure:5
+    environment:
+      RABBITMQ_SERVER: rabbitmq
+      EUREKA_SERVER: eurekaserver
+    depends_on:
+      eurekaserver:
+        condition: service_healthy
+    networks:
+      - msnet
+
+  mscartoes:
+    build:
+      context: ./mscartoes
+    container_name: mscartoes
+    restart: on-failure:5
+    environment:
+      RABBITMQ_SERVER: rabbitmq
+      EUREKA_SERVER: eurekaserver
+      MYSQL_SERVER: mysql
+      MYSQL_PORT: 3306
+      MYSQL_DATABASE: mscartoes_db
+      MYSQL_USER: msuser
+      MYSQL_PASSWORD: mspassword
+    depends_on:
+      eurekaserver:
+        condition: service_healthy
+    networks:
+      - msnet
+
+  msclientes:
+    build:
+      context: ./msclientes
+    container_name: msclientes
+    restart: on-failure:5
+    environment:
+      EUREKA_SERVER: eurekaserver
+      MYSQL_SERVER: mysql
+      MYSQL_PORT: 3306
+      MYSQL_DATABASE: msclientes_db
+      MYSQL_USER: msuser
+      MYSQL_PASSWORD: mspassword
+    depends_on:
+      eurekaserver:
+        condition: service_healthy
+    networks:
+      - msnet
+
+  # ------------------------------
+  # Camada 4: gateway (espera os microsserviços iniciarem)
+  # ------------------------------
+  mscloudgateway:
+    build:
+      context: ./mscloudgateway
+    container_name: mscloudgateway
+    restart: on-failure:5
+    environment:
+      EUREKA_SERVER: eurekaserver
+      KEYCLOAK_SERVER: keycloak
+      KEYCLOAK_PORT: 8080
+    ports:
+      - "9000:8080"
+    depends_on:
+      msavaliadorcredito:
+        condition: service_started
+      mscartoes:
+        condition: service_started
+      msclientes:
+        condition: service_started
+    networks:
+      - msnet
