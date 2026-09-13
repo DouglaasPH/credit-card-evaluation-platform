@@ -3,7 +3,7 @@ WORKDIR /app
 COPY . .
 RUN mvn clean package -DskipTests
 
-FROM openjdk:27-ea-17-oraclelinux9
+FROM eclipse-temurin:17-jre
 WORKDIR /app
 COPY --from=build ./app/target/*.jar ./app.jar
 EXPOSE 8761
