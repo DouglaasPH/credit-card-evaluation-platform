@@ -4,39 +4,7 @@ Ecossistema de microsserviços orientado a eventos para cadastro de clientes, av
 
 ## Arquitetura
 
-```
-                         ┌─────────────┐
-                         │   Cliente   │
-                         │  (externo)  │
-                         └──────┬──────┘
-                                │
-                         ┌──────▼──────┐
-                         │ mscloudgateway │  ← porta de entrada única (9000)
-                         │  (Gateway +    │     valida JWT no Keycloak
-                         │   discovery)   │
-                         └──────┬──────┘
-                                │
-              ┌─────────────────┼─────────────────┐
-              │                 │                 │
-       ┌──────▼──────┐  ┌───────▼───────┐  ┌──────▼───────┐
-       │  msclientes  │  │  mscartoes    │  │msavaliadorcredito│
-       │  (cadastro)  │  │ (catálogo +   │  │ (orquestrador)   │
-       │              │  │  emissão)     │  │                  │
-       └──────┬──────┘  └───────┬───────┘  └────────┬─────────┘
-              │                 │                    │
-              │           ┌─────▼─────┐              │
-              │           │ RabbitMQ  │◄─────────────┘
-              │           │  (fila)   │
-              │           └───────────┘
-              │                 │
-       ┌──────▼─────────────────▼──────┐
-       │            MySQL              │
-       │  (msclientes_db / mscartoes_db)│
-       └────────────────────────────────┘
-
-  Todos os serviços se registram no eurekaserver (service discovery)
-  mscloudgateway valida tokens contra o keycloak (autenticação)
-```
+![Diagram Architecture](architecture-diagram.png)
 
 ## Serviços
 
